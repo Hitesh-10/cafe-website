@@ -1,0 +1,166 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0px;
+        font-family: montserrat-regular;
+        color: #999;
+        font-size: 12px;
+      }
+      .wrapper {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: #fee2b3 no-repeat;
+        background-size: cover;
+        flex-wrap: wrap;
+      }
+      .inner {
+        max-width: 850px;
+        margin: auto;
+        background: #fff;
+        display: flex;
+      }
+      .image {
+        width: 50%;
+        padding-right: 15px;
+      }
+      form {
+        width: 50%;
+        padding-top: 77px;
+        padding-right: 60px;
+        padding-left: 25px;
+      }
+      h3 {
+        font-size: 32px;
+        letter-spacing: 2px;
+        font-family: "Playfair Display", serif;
+        text-align: center;
+        margin-bottom: 27px;
+        color: #ff5200;
+      }
+      .contents {
+        padding-left: 24px;
+        position: relative;
+      }
+      form::before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 2px solid #ff9a9c;
+        position: absolute;
+        left: 1px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      form > div {
+        padding: 10px;
+      }
+      .foot {
+        display: flex;
+        align-items: center;
+        margin-left: 23px;
+      }
+      .control {
+        display: block;
+        width: 100%;
+        border-radius: 23.5px;
+        height: 47px;
+        padding: 0 24px;
+        color: gray;
+        font-size: 13px;
+        border: none;
+        background: #f7f7f7;
+        margin-bottom: 25px;
+      }
+      p {
+        font-family: "Playfair Display", serif;
+      }
+      a {
+        text-decoration: none;
+        color: #ff5200;
+        transition: all 0.3s ease;
+      }
+      button {
+        letter-spacing: 2px;
+        border: none;
+        width: 133px;
+        height: 47px;
+        margin-right: 19px;
+        border-radius: 23.5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background: #ff5200;
+        font-size: 15px;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: montserrat-semibold;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px transparent;
+      }
+      .admin{
+        text-align: center;
+      }
+      @media screen and (max-width: 770px) {
+        .inner {
+          display: flex;
+          flex-direction: column;
+        }
+        form {
+          width: 100%;
+          padding: 0 15px 70px;
+        }
+        .image {
+          padding-right: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="inner">
+        <div class="image">
+          <img
+            src="/images/login-pic.jpg"
+            alt="image"
+            width="410px" height="576px"
+          />
+        </div>
+        <form action="/admin-signin" method="post">
+          <h3>ADMIN LOGIN</h3>
+          <div class="contents">
+            <input class="control" type="email" placeholder="E-mail" name="email" required />
+          </div>
+          <div class="contents">
+            <input class="control" type="password" placeholder="Password" name="password" required />
+          </div>
+          <div class="foot">
+            <button>LOG IN</button>
+            <p> Create a new one ? <a href="/admin-signup">Sign up</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

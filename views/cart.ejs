@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart 🛒</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .dropdown {
+            border: none;
+            background: none;
+        }
+
+        .dropdown:hover {
+            background-color: #faf9f9;
+            border-radius: 30px;
+
+        }
+
+        .cartcontainer {
+
+            width: 70%;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            padding-top: 150px;
+        }
+
+        .table {
+            background-color: rgba(0, 0, 0, 0.658);
+            color: white;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            
+        }
+
+        .box {
+            
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        #remove{
+            text-decoration: none;
+            color: white;
+            font-weight: 100;
+            background-color:#fc6c29;
+            border: 2px solid #fc6c29;
+            border-radius: 8px;
+            padding: 5px;
+            font-weight: 100;
+        }
+        #remove:hover{
+            color: black;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        #cartimg{
+            width: 50px;
+            margin-right: 20px;
+        }
+         .cart-total {
+          /* width: 70%; */
+            padding: 1.5rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-color:#fc6c29;
+            color: white;
+        }
+        #cart-total-value {
+            font-size: 1.3rem;
+            font-weight: 500;
+        } 
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+
+            <img src="/images/logo-removebg-preview.png" alt="Logo" id="logo">
+            <ul class="list">
+
+                <a href="/customer.html" class="links">Home</a>
+                <a href="/customer.html/.menu" class="links">Menu</a>
+                <a href="" class="links">Events</a>
+                <a href="" class="links">Gallery</a>
+                <a href="/customer.html/site-footer" class="links">About</a>
+                <a href="#contact" class="links">Contact</a>
+            </ul>
+            <form action="/custPanel" method="get">
+              <button class="dropdown">
+                  <a href=""><img src="/images/cart-removebg-preview.png" alt="cart"
+                          style="height: 2.5rem; width:2.5rem;"></a>
+                  <i class="fa fa-caret-down"></i>
+              </button>
+          </form>
+
+        </div>
+
+    </nav>
+    <!-- Home -->
+    <section class=" bgimg overlay fixed" style="background-image: url(/images/sec1bg.svg);">
+        <div class="test" style=" padding-bottom:270px;">
+
+            <div class="cartcontainer">
+                <h3 class="h3 text" style=" font-size: 50px; color: #ff5200;">Your <strong style="color: white;">Cart (<%= carts.length %>)</strong></h3>
+                <div class="table">
+                    <div class="box">Your Dish</div>
+                    <div class="box">Dish Name</div>
+                    <div class="box">Price</div>
+                    <div class="box">Remove</div>
+                    <% carts.forEach(cart => { %>
+                    <div class="box"> 
+                        <img src="./uploads/<%= cart.image %>"  alt="product img" id="cartimg">
+                    </div>
+                    
+                    <div class="box"><%= cart.name %></div>
+                    <div class="box"><%= cart.price %></div>
+                    <div class="box">
+                        <form action="/deletecart/<%= cart._id %>" method="post">
+                            <a href="" class="remove">
+                              <button id="remove" type="submit">Remove</button>
+                            </a>
+                          </form>
+                    </div>
+                    <% }) %>
+
+
+                    <div class="box" style="text-align: right;">Total:</div>
+                    <div class="box">₹ <%= price %></div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

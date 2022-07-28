@@ -1,0 +1,261 @@
+*{
+    /* overflow: hidden; */
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* HOME SECTION  */
+
+#logo{
+    height: 10vh;
+    width: 6vw;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+    padding-left: 2rem;
+    padding-right: 10rem;
+    /* margin-bottom: 100px; */
+}
+.list{ 
+    text-transform: uppercase;
+    padding: 20px;
+    margin-left: 100px;
+    justify-content: center;
+}
+ul a{  
+    color: rgb(173, 169, 169);
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+a:hover{
+    color: white;
+}
+
+.btn{
+    color: white;
+    border-color: #ff5200;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .05rem;
+   border-radius: 30px;
+   background-color:#ff5200;
+   padding:16px;
+   text-decoration: none;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: #fc6c29;
+    border-color: #fc6c29;
+    color: white;
+}
+
+.hcontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top:150px;
+    /* position: absolute; */
+    /* padding-bottom:150px; */
+
+}
+.subhead{
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    margin: 30px;
+}
+#head{
+    color: #ffffff;
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.para{
+    color: #ffffff;
+    align-items: center;
+    margin: 0vh 30vw 0vh 30vw;
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.bgimg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.bgimg.fixed {
+    background-attachment: fixed;
+}
+
+.bgimg.overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.bgimg.overlay:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.527);
+    z-index: 1;
+}
+
+.bgimg>.test {
+    position: relative;
+    z-index: 1;
+}
+.gallery {
+    height: 100vh;
+    width: 100%;
+}
+
+
+.primary {
+    color: #ff5200 !important;
+    ;
+}
+
+.h2 {
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 2rem;
+}
+.textcol{
+    color: white;
+}
+.mb5 {
+    margin-bottom: 3rem;
+}
+
+.h3 {
+    font-size: 25px;
+    color: #ff5200;
+
+}
+
+.position {
+    font-size: 20px;
+}
+
+.quote {
+    font-size: 5em;
+    line-height: 0;
+}
+
+.column {
+    width: 50%;
+    /* display: flex; */
+
+}
+
+.sscontainer {
+    max-width: 1000px;
+    /* position: relative; */
+    z-index: 1;
+    /*border: 2px solid black;*/
+    height: 40vh;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    
+}
+
+.mySlides {
+    display: none;
+}
+
+.author {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(29, 29, 29, 0.8);
+}
+
+.text {
+    position: static;
+    margin-bottom: 20px;
+    width: 70%;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.imgcontainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.galimg{
+    width: 255px;
+    height: 142.8px;
+    vertical-align: middle;
+    border-style: none;
+    margin: 20px;
+    border-radius: 20px;
+}

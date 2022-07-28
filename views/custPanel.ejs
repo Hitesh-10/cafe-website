@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/9dd3603324.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <title>Customer Page</title>
+    <style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        h1,
+        .h1,
+        h2,
+        .h2,
+        h3,
+        .h3,
+        h4,
+        .h4 {
+            font-family: "Playfair Display", serif;
+            color: black;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .h3,
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        .site-footer {
+            background: #645f56;
+            font-size: 14px;
+            color: #ffffff;
+            padding: 70px 0;
+        }
+
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .row {
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .site-footer .widget {
+            margin-bottom: 40px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-footer .widget h3 {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .list-unstyled {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        ul>li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+            padding: 10px 10px 10px 0px;
+        }
+
+        .site-footer .social li {
+            display: inline-block;
+        }
+
+        .site-footer .social li a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            background-color: #ffffff;
+            border-radius: 50%;
+            color: #000000;
+        }
+
+        .site-footer .social li a>span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        [class^="icon-"] {
+            font-family: 'icomoon' !important;
+            font-style: normal;
+            /* font-weight: normal; */
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .site-footer .widget .links li a {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        ol,
+        ul {
+            margin-top: 0;
+            margin-bottom: 26px;
+        }
+
+        .float-left {
+            float: left !important;
+        }
+
+        .site-footer .widget .links li a:hover {
+            color: #ffffff;
+            text-decoration: none;
+            transition: 1s;
+        }
+
+        .col-lg-3 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .col-lg-12>p {
+            margin-top: 50px;
+        }
+
+        .menu,
+        .menu-subsection,
+        .admin-form,
+        .Gallery {
+            background: #fee2b3;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .col-lg-3 .heading h3 {
+            font-size: 35px;
+        }
+
+        .subtitle {
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, .5);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .1rem;
+        }
+
+        .red,
+        .price {
+            color: red;
+        }
+
+        .menu-items {}
+
+        .img-fluid {
+            max-width: 100%;
+            width: 287px;
+            height: 165px;
+            border-radius: 16px;
+        }
+
+        .image-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+        }
+
+        .drink {
+            max-width: 100%;
+            height: 30px;
+        }
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+
+        .menu-down li a {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 10px;
+            padding: 15px 20px;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 30px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .menu-down li a:hover {
+            background: #ffffff;
+            transition: 1s;
+        }
+
+        .menu-down li img {
+            width: 25px;
+            margin-right: 20px;
+        }
+
+        #main-slide {
+            width: 100%;
+            height: 100%;
+        }
+
+        .col-lg-8 {
+            height: px;
+        }
+
+        .product h3 {
+            margin-top: 25px;
+        }
+
+        .sub-item {
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-item>div h3 {
+            font-size: 20px;
+            padding-top: 10px;
+        }
+
+        figure {
+            -webkit-box-flex: 0;
+            flex: 0 0 60px;
+        }
+
+        .sub-item:hover {
+            text-decoration: none;
+            background: white;
+            transition: 1s;
+        }
+
+        .add {
+            padding: auto;
+            margin-left: 900px;
+        }
+
+        .delete {
+            margin-left: 50px;
+            padding-bottom: 0px;
+        }
+
+        .admin {
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-bottom: 50px;
+            overflow: scroll;
+        }
+
+        .admin::-webkit-scrollbar {
+            display: none;
+        }
+
+        button {
+          padding: 0;
+          background-color: transparent;
+          border: none;
+        }
+
+        .button {
+            text-decoration: none;
+            color: white;
+            background: #ff5200;
+            padding: 15px 30px 15px 30px;
+            border-radius: 30px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            border: none;
+            width: 133px;
+            height: 47px;
+            margin-right: 19px;
+            border-radius: 23.5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            background: #ff5200;
+            font-size: 15px;
+            color: #fff;
+            text-transform: uppercase;
+            font-family: montserrat-semibold;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+        }
+
+        .book {
+            text-decoration: none;
+            color: white;
+            background: #ff5200;
+            padding: 10px 20px 10px 20px;
+            border-radius: 26px;
+            margin-top: 200px;
+        }
+
+        .contact-info i {
+            font-size: 20px;
+            float: left;
+            width: 44px;
+            height: 44px;
+            background: #ff5200;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            /* display: flex; */
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            border-radius: 50px;
+            -webkit-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            color: #ffffff;
+        }
+
+        .contact-info h4 {
+            font-size: 18px;
+            padding: 0 0 0 60px;
+        }
+
+        .contact-info p {
+            padding: 0 0 0 60px;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: calc(1.5em + 0.75rem + 2px);
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        .form-control,
+        .custom-select {
+            border: none;
+            font-size: 16px;
+            height: 45px;
+            background: transparent;
+            border: 1px solid #43434d;
+            border-radius: 0;
+            color: #000000;
+        }
+
+        .file {
+            content: 'Select some files';
+            display: inline-block;
+            background: linear-gradient(top, #f9f9f9, #e3e3e3);
+            border: 1px solid #999;
+            border-radius: 3px;
+            padding: 5px 8px;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        .icon-room {
+            content: "\e8b4";
+        }
+
+        .add-items {
+            padding-left: 15px;
+            color: #ff5200;
+        }
+
+        .del-items {
+            padding-left: 10px;
+            color: #ff5200;
+        }
+
+        .site-nav {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .site-logo {
+            margin-left: 20px;
+        }
+
+        .menu-logo:hover {
+            color: #ff5200;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: #fff;
+            font-weight: 700;
+            left: 30px;
+        }
+
+        .site-get {
+            display: flex;
+        }
+
+        .heading {
+            font-size: 70px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .caption {
+            text-transform: uppercase;
+            color: white;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .1rem;
+        }
+
+        .sub-cap {
+            color: white;
+        }
+
+        .btn {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 30px;
+            color: #f9f9f9;
+            padding-right: 30px;
+            border-radius: 30px;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: .05rem;
+            border: #ff5200;
+            background-color: #ff5200;
+
+        }
+
+        .social-home li a {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            display: inline-block;
+            background: white;
+            border-radius: 50%;
+            color: #ff5200;
+        }
+
+        .social-home {
+            position: absolute;
+            right: 0;
+            bottom: 30px;
+            right: 30px;
+            ;
+            z-index: 2;
+        }
+
+        .social-home li {
+            display: inline-block;
+        }
+
+        .social-home li a span {
+            position: absolute;
+            top: 31%;
+            left: 34%;
+        }
+
+        .home-main::before {
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .navig a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.51)
+        }
+
+        .navig a:hover {
+            color: #f9f9f9;
+        }
+
+        .add-items,
+        .des-add {
+            padding-left: 15px;
+            color: #ff5200;
+        }
+
+        .del-items,
+        .des-del {
+            padding-left: 10px;
+            color: #ff5200;
+        }
+
+        .search-button {
+            border: 2px solid #ff5200;
+            border-radius: 16px;
+        }
+
+        .search-button:hover {
+            background: #ff5200;
+            color: white;
+        }
+
+        .testimonial .author img {
+            width: 80px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        .author {
+            display: block;
+        }
+
+        button {
+            padding: 0;
+            background-color: transparent;
+            border: none;
+        }
+
+        #cart {
+            height: 50px;
+            width: 50px;
+            border: none;
+            padding: 10px;
+            background-color: #fd641d;
+            border-radius: 50px;
+            margin-left: 10px;
+        }
+
+        #cart:hover {
+            background-color: white;
+        }
+
+        @media screen and (max-width:800) {
+            .site-nav {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .menu-heading {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="Home-Header">
+        <div class="home-main"
+            style="background: url(/images/sec1bg.svg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; padding-bottom:100px;">
+            <nav class="site-nav mb-5">
+                <div class="site-logo"><a href="" class="logo menu-logo" style="text-decoration: none;">Cafe <span
+                            class="red">.</span></a></div>
+                <div class="container-fluid">
+                    <div class="site-navbar text-left">
+                        <div>
+                            <div class="d-flex justify-content-center">
+                                <div class="navig nav-home"><a href=""> Home</a></div>
+                                <div class="navig nav-menu ml-5"><a href="#Section1"> Menu</a></div>
+                                <div class="navig nav-events ml-5"><a href="#Section4"> Events</a></div>
+                                <div class="navig nav-gallery ml-5"><a href="#Section3"> Gallery</a></div>
+                                <div class="navig nav-about ml-5"><a href=""> About</a></div>
+                                <div class="navig nav-contact ml-5"><a href="#Section5">Contact</a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="site-navbar text-left">
+                        <div>
+                            <div class="d-flex justify-content-end">
+                                <div class="site-get">
+                                    <div class="container">
+                                        <form action="/logout" method="post">
+                                            <button type="submit" class="btn">LOG OUT</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="row align-items-center justify-items-center">
+                    <div class="col-lg-12 mb-4" style=" padding-top:50px;">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 text-center"><span class="caption">ENJOY YOUR HEALTHY DELICIOUS
+                                    MEAL</span>
+                                <h1 class="heading mb-4 mt-4" data-aos="fade-up" data-aos-delay="100">Treat Yourself
+                                </h1>
+                                <div class="mb-4">
+                                    <p class="sub-cap" data-aos="fade-up" data-aos-delay="100">Another free template by
+                                        Colorlib. Far far away, behind the word
+                                        mountains, far from the
+                                        countries Vokalia and Consonantia, there live the blind texts.</p>
+                                </div>
+                                <p class="con-btn" data-aos="fade-up" data-aos-delay="300"><a href=""
+                                        class="btn xplore mb-5" style="text-decoration: none;">Explore
+                                        Now</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="menu" id="Section1">
+        <div class="admin">
+            <div class="menu-items">
+                <div class="items">
+                    <div class="row align-items-center mb-4 menu-heading">
+                        <div class="col-12 d-flex mb-2" data-aos="fade-left" data-aos-delay="100">
+                            <h2 class="text-black">MENU <span class="red"> SECTION.</span></h2>
+                            <div class="container">
+                                <div class="row justify-content-end">
+                                    <form class="form-inline f-wrap" action="/search" method="get">
+                                        <input class="form-control mr-sm-2 menu-search " style="border-radius: 50px;" type="search" name="name"
+                                            placeholder="Search" aria-label="Search">
+                                        <button class="btn search-button my-2 my-sm-0" style="border-radius: 50px;" type="submit">Search</button>
+                                    </form>
+                                    <form action="/cart" method="get">
+                                        <button type="submit"><img src="/images/cart-removebg-preview.png" alt="cart" id="cart"></button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <% items.forEach(item=> { %>
+                            <div class="col-lg-3 mb-4">
+                                <div class="product">
+                                    <a href="">
+                                        <img src="./uploads/<%= item.image %>" alt="DB Image" class="img-fluid">
+                                    </a>
+                                    <h3>
+                                        <%= item.name %>
+                                    </h3>
+                                    <div class="d-flex">
+                                        <div class="price">₹ <%= item.price %></div>
+                                        <form action="/addtocart/<%= item._id %>" method="post">
+                                            <a href="">
+                                                <button type="submit" class="add-items"><i class="fa-solid fa-circle-plus"></i></button>
+                                            </a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="menu-subsection pt-0 pb-6" style="background: rgba(245, 201, 126, 0.9);" >
+        <div class="container">
+            <div class="col-lg-12 text-center mb-5 pt-5" data-aos="fade-up" data-aos-delay="0"><span class="subtitle">CHOOSE DESSERTS</span>
+                <h3>Popular <span class="red">Desserts</span></h3>
+            </div>
+            <div class="row align-items-stretch">
+                <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0"data-aos="fade-up" data-aos-delay="0"><a href="" class="d-flex align-items-strech h-100 sub-item">
+                        <figure class="mr-4 p-1"><img
+                                src="/images/cherry.webp"
+                                alt="image" class="image-fluid"></figure>
+                        <div>
+                            <h3>Cherry Muffin</h3><span class="price">₹ 50<i
+                                    class="fa-solid fa-circle-plus des-add"></i></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100"><a href="" class="d-flex align-items-strech h-100 sub-item">
+                        <figure class="mr-4 p-1"><img
+                                src="/images/rose.webp"
+                                alt="image" class="image-fluid"></figure>
+                        <div>
+                            <h3>Rose Muffin</h3><span class="price">₹ 50<i class="fa-solid fa-circle-plus des-add"></i></span>
+                        </div>
+                    </a></div>
+                <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200"><a href="" class="d-flex align-items-strech h-100 sub-item">
+                        <figure class="mr-4 p-1"><img
+                                src="/images/sweet.webp"
+                                alt="image" class="image-fluid"></figure>
+                        <div>
+                            <h3>Sweet Muffin</h3><span class="price">₹ 50<i
+                                    class="fa-solid fa-circle-plus des-add"></i></span>
+                        </div>
+                    </a></div>
+                <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300"><a href="" class="d-flex align-items-strech h-100 sub-item">
+                        <figure class="mr-4 p-1"><img
+                                src="/images/choco.webp"
+                                alt="image" class="image-fluid"></figure>
+                        <div>
+                            <h3>Choco Muffin</h3><span class="price">₹ 50<i
+                                    class="fa-solid fa-circle-plus des-add"></i></span>
+                        </div>
+                    </a></div>
+            </div>
+        </div>
+    </section>
+    <section class="Gallery" id="Section3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-lg-0 mr-auto" data-aos="fade-up" data-aos-delay="0"><span
+                        class="subtitle">TESTIMONIALS</span>
+                    <h2 class="mb-5">Satisfied <strong style="color: #ff5200;"> Customers</strong></h2>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators mt-6">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" style="height: 330px;">
+                            <div class="carousel-item active">
+                                <div class="items d-block" style="background:#fee2b3 ;">
+                                    <div class="testimonial">
+                                        <div class="author"><img
+                                                src="/images/person1.webp"
+                                                alt="">
+                                            <h3>Raj Pawar</h3>
+                                            <p class="details mb-0">TE ECS</p>
+                                        </div>
+                                        <div class="quote"><b style="font-size: x-large;"> " </b> </div>A small river
+                                        named Duden flows by their place and supplies it with
+                                        the
+                                        necessary regelialia. It is a paradisematic country, in which roasted parts of
+                                        sentences
+                                        fly into your mouth.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="items d-block" style="background:#fee2b3 ;">
+                                    <div class="testimonial">
+                                        <div class="author"><img
+                                                src="/images/person2.webp"
+                                                alt="">
+                                            <h3>Hitesh Reddy</h3>
+                                            <p class="details mb-0">TE CE</p>
+                                        </div>
+                                        <div class="quote"><b style="font-size: x-large;"> " </b> </div>A small river
+                                        named Duden flows by their place and supplies it with
+                                        the
+                                        necessary regelialia. It is a paradisematic country, in which roasted parts of
+                                        sentences
+                                        fly into your mouth.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="items d-block" style="background:#fee2b3 ;">
+                                    <div class="testimonial">
+                                        <div class="author"><img
+                                                src="/images/person3.webp"
+                                                alt="">
+                                            <h3>Kushal</h3>
+                                            <p class="details mb-0">SE ECS</p>
+                                        </div>
+                                        <div class="quote"><b style="font-size: x-large;"> " </b> </div>A small river
+                                        named Duden flows by their place and supplies it with
+                                        the
+                                        necessary regelialia. It is a paradisematic country, in which roasted parts of
+                                        sentences
+                                        fly into your mouth.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        </button>
+                    </div>
+
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0"><span class="subtitle">GALLERIES</span>
+                    <h2 class="mb-5"> Photo <strong style="color: #ff5200;"> Galleries </strong></h2>
+                    <div class="row">
+                        <div class="col-lg-6 mb-4"><a href=""><img
+                                    src="/images/galimg1.png"
+                                    alt="" class="img-fluid"></a></div>
+                        <div class="col-lg-6 mb-4"><a href=""><img
+                                    src="/images/galimg2.png"
+                                    alt="" class="img-fluid"></a></div>
+                        <div class="col-lg-6 mb-4"><a href=""><img
+                                    src="/images/galimg3.png"
+                                    alt="" class="img-fluid"></a></div>
+                        <div class="col-lg-6 mb-4"><a href=""><img
+                                    src="/images/galimg4.png"
+                                    alt="" class="img-fluid"></a></div>
+                        <div class="col-lg-12"><a href="#" class="btn">More Galleries</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="rev-table bg-img py-5 fixed " id="Section4" style="background:rgba(245, 201, 126, 0.9);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center"><span class="subtitle">BOOK A TABLE</span>
+                    <h3>Book A Table Now</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
+                        live the
+                        blind texts.
+                    </p>
+                    <p>
+                        <a href="" class="btn">Book A Table</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+    <div class="site-footer" id="Section5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-4">
+                    <div class="widget">
+                        <h3>About Meal<span class="text-primary"></span></h3>
+                        <p>
+                            Far far away, behind the word mountains, far from the countries
+                            Vokalia and Consonantia, there live the blind texts.
+                        </p>
+                    </div>
+                    <div class="widget">
+                        <h3>Connect</h3>
+                        <ol class="list-unstyled social">
+                            <li><a href="#"><span class="icon-instagram"><i
+                                            class="fa-brands fa-instagram"></i></span></a></li>
+                            <li><a href="#"><span class="icon-twitter"><i class="fa-brands fa-twitter"></i></span></a>
+                            </li>
+                            <li><a href=""><span class="icon-facebook"><i class="fa-brands fa-facebook"></i></span></a>
+                            </li>
+                            <li><a href=""><span class="icon-linkedin"><i class="fa-brands fa-linkedin"></i></span></a>
+                            </li>
+                            <li><a href=""><span class="icon-pinterest"><i
+                                            class="fa-brands fa-pinterest"></i></span></a></li>
+                            <li><a href=""><span class="icon-dribble"><i class="fa-solid fa-basketball"></i></span></a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-2 ml-auto">
+                    <div class="widget">
+                        <h3>Projects</h3>
+                        <ul class="list-unstyled float-left links">
+                            <li><a href="">Web Design</a></li>
+                            <li><a href="">HTML5</a></li>
+                            <li><a href="">CSS3</a></li>
+                            <li><a href="">jQuery</a></li>
+                            <li><a href="">Bootstrap</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="widget">
+                        <h3>Services</h3>
+                        <ul class="list-unstyled float-left links">
+                            <li><a href="">Design</a></li>
+                            <li><a href="">Frontend</a></li>
+                            <li><a href="">Code</a></li>
+                            <li><a href="">Developer</a></li>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="widget">
+                        <h3>Contact</h3>
+                        <address>43 Raymouth Rd. Baltemoer, London 3910</address>
+                        <ul class="list-unstyled links mb-4">
+                            <li><a href="">+1(123)-456-7890</a></li>
+                            <li><a href="">+1(123)-456-7890</a></li>
+                            <li><a href="">info@mydomain.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright © All rights reserved | This template is made by Team 3</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                offset: 200,
+                duration: 1000,
+            });
+        </script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script> -->
+  
+</body>
+
+</html>
