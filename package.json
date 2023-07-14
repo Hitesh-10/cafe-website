@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "nodemon server.js",
     "dev": "nodemon server.js",
@@ -25,8 +28,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  },
-  "engines": {
-    "node": "14.17.0"
   }
 }
